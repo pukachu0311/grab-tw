@@ -1,0 +1,87 @@
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Inter Grab Web, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;}
+a{
+  text-decoration: none;
+}
+    .header{
+    height: 90px;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.header-bg{
+    background-color:white;
+    border-bottom:  1px solid #cfcfcf;
+} 
+.logo2 { 
+    width: 150px;
+    height: 80px;
+}
+/* .mainContainer{
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex: auto;
+    background: transparent;
+} */
+.searchContainer {
+    width: 360px;
+    height: 398px;
+    position: absolute;
+    top: 16vh;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 24px;
+    margin: 0 40px;
+    border: 1px solid #e5e9f0;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;;
+    z-index: 2;
+ }
+
+ #textBox{
+    font-size: 35px;
+    font-weight: 700;
+    text-align: left; 
+ }
+
+ .location-input { 
+    border: 0.5px solid rgb(201, 196, 196); 
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  .location-input:hover {
+    border: 1px solid green; 
+    padding: 10px; 
+  }
+  #search-input {
+    border: 0; 
+    outline: none; 
+  }
+
+  #search-input:focus {
+    border: 0; 
+  }
+  #btnSearch{
+    padding:10px ;
+    background-color: #00b14f;
+    border-color:#00b14f;
+    margin-top: 10px;
+  }
