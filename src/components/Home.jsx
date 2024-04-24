@@ -89,7 +89,11 @@ const Home = () => {
       {/* Searchbox */}
       {/* chưa chỉnh được md width  100%, top 0 */}
       <div className="container">
-        <div className="searchContainer ">
+        <div
+          className={`searchContainer ${
+            !color ? ".searchContainer" : "md:w-full"
+          }`}
+        >
           <h5 style={{ textAlign: "left" }}>
             <strong>Good Afternoon</strong>
           </h5>
@@ -122,12 +126,12 @@ const Home = () => {
       {/* Content */}
 
       <div className="container" style={{ height: "1000px" }}>
-        <h1 className="ml-8 text-left">
+        <h1 className="ml-8 font-bold text-left">
           GrabFood Promo in
           <a className="text-green-600 no-underline "> location</a>
         </h1>
         {/* Carousel */}
-        <Carousel responsive={responsive} customTransition="all .25">
+        <Carousel className="sm:flex sm:items-center " responsive={responsive}>
           {restaurant}
         </Carousel>
       </div>

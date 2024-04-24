@@ -1,15 +1,15 @@
 export const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 2000, min: 1024 },
+      breakpoint: { max: 2000, min: 1250 },
       items: 4,
     },
     desktop: {
-      breakpoint: { max: 1024, min: 800 },
+      breakpoint: { max: 1250, min: 1000 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 800, min: 464 },
+      breakpoint: { max: 1000, min: 464 },
       items: 2,
     },
     mobile: {
