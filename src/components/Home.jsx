@@ -139,9 +139,14 @@ const Home = () => {
         <h1 className="my-5 ml-8 font-bold text-left">
           There's something for everyone!
         </h1>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 ml-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {type}
         </div>
+
+        <h1 className="my-5 ml-8 font-bold text-left">Why GrabFood?</h1>
+        <h1 className="my-5 ml-8 font-bold text-left">
+          Frequently Asked Questions
+        </h1>
       </div>
 
       {/* Footer */}
