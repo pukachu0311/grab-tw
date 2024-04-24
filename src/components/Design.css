@@ -13,7 +13,7 @@ a{
     position:fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 10000;
     overflow: hidden;
 }
 
@@ -21,10 +21,6 @@ a{
     background-color:white;
     border-bottom:  1px solid #cfcfcf;
 } 
-.logo2 { 
-    width: 150px;
-    height: 80px;
-}
 /* .mainContainer{
     justify-content: center;
     -webkit-box-orient: vertical;
@@ -35,41 +31,22 @@ a{
     background: transparent;
 } */
 .searchContainer {
+  @apply absolute flex flex-col justify-center p-6 mx-10 bg-white border border-gray-300 rounded-lg top-28 group-hover:border-green-600;
     width: 360px;
     height: 398px;
-    position: absolute;
-    top: 16vh;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 24px;
-    margin: 0 40px;
-    border: 1px solid #e5e9f0;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    flex-direction: column;
     -webkit-box-pack: center;
-    justify-content: center;;
-    z-index: 2;
+   z-index: 2;
  }
 
- #textBox{
-    font-size: 35px;
-    font-weight: 700;
-    text-align: left; 
- }
 
  .location-input { 
-    border: 0.5px solid rgb(201, 196, 196); 
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    justify-content: space-between;
+  @apply flex items-center justify-between p-2 my-1 transition duration-300 ease-in-out border rounded;
+    
   }
   .location-input:hover {
     border: 1px solid green; 
-    padding: 10px; 
   }
   #search-input {
     border: 0; 
@@ -85,3 +62,12 @@ a{
     border-color:#00b14f;
     margin-top: 10px;
   }
+
+#see-all {
+  @apply px-4 py-2 text-sm font-bold bg-white border border-gray-700 text-slate-500;
+  
+}
+
+#see-all:hover {
+  @apply text-green-600 border-green-600;
+}

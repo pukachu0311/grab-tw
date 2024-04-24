@@ -10,7 +10,8 @@ import tw from "../assets/twitter.png";
 import fb from "../assets/facebook.png";
 import ig from "../assets/instagram.png";
 import Restaurant from "./Restaurant";
-import { responsive, restaurantData } from "./data";
+import { responsive, restaurantData, typeData } from "./data";
+import Type from "./Type";
 
 const restaurant = restaurantData.map((item) => (
   <Restaurant
@@ -23,6 +24,9 @@ const restaurant = restaurantData.map((item) => (
     distance={item.distance}
     promotion={item.promotion}
   />
+));
+const type = typeData.map((item) => (
+  <Type title={item.title} image={item.image} />
 ));
 const Home = () => {
   const [color, setColor] = useState(false);
@@ -52,7 +56,7 @@ const Home = () => {
       <div className={color ? "header header-bg header-shadow" : "header"}>
         <div className="flex items-center justify-between mx-36">
           <a className="" href="/">
-            <img className="logo2" src={logoSrc} alt="Logo" />
+            <img className="w-40 h-20 mt-2" src={logoSrc} alt="Logo" />
           </a>
           <div className="flex space-x-4">
             <button
@@ -89,27 +93,17 @@ const Home = () => {
       {/* Searchbox */}
       {/* chưa chỉnh được md width  100%, top 0 */}
       <div className="container">
-        <div
-          className={`searchContainer ${
-            !color ? ".searchContainer" : "md:w-full"
-          }`}
-        >
-          <h5 style={{ textAlign: "left" }}>
-            <strong>Good Afternoon</strong>
-          </h5>
-          <h1 id="textBox">Where should we deliver your food today?</h1>
-          <div className="flex items-center pb-2 mb-4 border-b border-gray-300 location-input">
-            <img
-              id="icon"
-              src={iconLocation}
-              alt="Location Icon"
-              className="h-6 m-1"
-            />
+        <div class="searchContainer">
+          <h5 className="font-bold text-left">Good Afternoon</h5>
+          <h1 className="font-bold text-left ">
+            Where should we deliver your food today?
+          </h1>
+          <div className="location-input">
+            <img src={iconLocation} alt="Location Icon" className="h-6 m-1" />
             <input
-              id="search-input"
               placeholder="Type your location"
               type="text"
-              className="flex-1 w-full py-2 focus:outline-none"
+              className="flex-1 w-full p-2 focus:outline-none"
             />
             <img
               src="https://food.grab.com/static/images/icons/icon-geo-button.svg"
@@ -117,7 +111,8 @@ const Home = () => {
               className="h-6"
             />
           </div>
-          <button id="btnSearch" type="button" className="btn btn-primary">
+
+          <button id="btnSearch" type="button" className=" btn btn-primary">
             Search
           </button>
         </div>
@@ -125,7 +120,7 @@ const Home = () => {
       <hr className="my-16" />
       {/* Content */}
 
-      <div className="container" style={{ height: "1000px" }}>
+      <div className="container">
         <h1 className="ml-8 font-bold text-left">
           GrabFood Promo in
           <a className="text-green-600 no-underline "> location</a>
@@ -134,6 +129,19 @@ const Home = () => {
         <Carousel className="sm:flex sm:items-center " responsive={responsive}>
           {restaurant}
         </Carousel>
+        {/* Button */}
+        <div className="gap-2 d-grid" style={{ margin: "0 40px" }}>
+          <a href="/restaurant" className="btn btn-primary" id="see-all">
+            See all promotions
+          </a>
+        </div>
+        {/* Type */}
+        <h1 className="my-5 ml-8 font-bold text-left">
+          There's something for everyone!
+        </h1>
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {type}
+        </div>
       </div>
 
       {/* Footer */}
