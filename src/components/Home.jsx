@@ -3,6 +3,7 @@ import "./Design.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import tick from "../assets/tick.svg";
 import logo2 from "../assets/logo-grabfood2.svg";
 import logo1 from "../assets/logo-grabfood-white2.svg";
 import iconLocation from "../assets/location.png";
@@ -10,8 +11,9 @@ import tw from "../assets/twitter.png";
 import fb from "../assets/facebook.png";
 import ig from "../assets/instagram.png";
 import Restaurant from "./Restaurant";
-import { responsive, restaurantData, typeData } from "./data";
+import { faqData, responsive, restaurantData, typeData } from "./data";
 import Type from "./Type";
+import Infomation from "./Infomation";
 
 const restaurant = restaurantData.map((item) => (
   <Restaurant
@@ -27,6 +29,22 @@ const restaurant = restaurantData.map((item) => (
 ));
 const type = typeData.map((item) => (
   <Type title={item.title} image={item.image} />
+));
+const faq = faqData.map((item) => (
+  <Infomation
+    question={item.question}
+    answer1={item.answer1}
+    answer2={item.answer2}
+    num1={item.num1}
+    tit1={item.tit1}
+    content1={item.content1}
+    num2={item.num2}
+    tit2={item.tit2}
+    content2={item.content2}
+    num3={item.num3}
+    tit3={item.tit3}
+    content3={item.content3}
+  />
 ));
 const Home = () => {
   const [color, setColor] = useState(false);
@@ -60,7 +78,7 @@ const Home = () => {
           </a>
           <div className="flex space-x-4">
             <button
-              className="hidden h-10 px-3 font-semibold bg-white border rounded-lg border-slate-200 text-slate-400 lg:block"
+              className="hidden h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-400 lg:block"
               type="button"
             >
               <img
@@ -69,14 +87,14 @@ const Home = () => {
               />
             </button>
             <button
-              className="h-10 px-3 font-semibold bg-white border rounded-lg border-slate-200 text-slate-500"
+              className="h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-500 font-sm"
               type="button"
             >
               Login / Sign Up
             </button>
 
             <button
-              className="h-10 px-3 font-semibold bg-white border rounded-lg border-slate-200 text-slate-500"
+              className="h-10 px-3 font-semibold bg-white border rounded font-sm border-slate-200 text-slate-500"
               type="button"
             >
               EN
@@ -142,16 +160,77 @@ const Home = () => {
         <div className="grid grid-cols-1 gap-3 ml-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {type}
         </div>
-
+        {/* FAQ */}
         <h1 className="my-5 ml-8 font-bold text-left">Why GrabFood?</h1>
+        <section className="ml-8 text-left">
+          <p>
+            <img className="inline mr-2" src={tick}></img>
+            <strong>Quickest</strong>- GrabFood provides the fastest food
+            delivery in the market.
+          </p>
+          <p>
+            <img className="inline mr-2" src={tick}></img>
+            <strong>Easiest</strong> - Now grabbing your food is just a few
+            clicks or taps away. Order online or download our Grab super app for
+            a faster and more rewarding experience.
+          </p>
+          <p>
+            <img className="inline mr-2" src={tick}></img>
+            <strong>Food for all cravings</strong>- From local fare to
+            restaurant favourites, our wide selection of food will definitely
+            satisfy all your cravings
+          </p>
+          <p>
+            <img className="inline mr-2" src={tick}></img>
+            <strong>Pay with ease</strong>- It’s easy to get your meals
+            delivered to you. It’s even easier to pay for it with GrabPay.
+          </p>
+          <p>
+            <img className="inline mr-2" src={tick}></img>
+            <strong>More Rewarding</strong>- earn GrabRewards points for every
+            order you make and use them to redeem more goodies.
+          </p>
+        </section>
         <h1 className="my-5 ml-8 font-bold text-left">
           Frequently Asked Questions
         </h1>
+        <div className="ml-4">{faq}</div>
+      </div>
+      {/* Download */}
+      <div className="my-0 bg-slate-50">
+        <div className="grid grid-cols-2 gap-4 ">
+          <div className="flex flex-col items-center justify-center m-20 ml-44">
+            <img src="https://food.grab.com/static/page-home/bottom-food-options.svg" />
+            <h5>Curated restaurants</h5>
+            <p>
+              From small bites to big meals, we won't limit your appetite. Go
+              ahead and order all you want.
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-center m-20 mr-44">
+            <img
+              className="w-40"
+              src="https://food.grab.com/static/images/ilus-cool-features-app.svg"
+            />
+            <h5>More cool features available on the app</h5>
+            <p>
+              Download Grab app to use other payment methods and enjoy seamless
+              communication with your driver.
+            </p>
+            <div class="col-span-2 flex items-center ml-8 py-2">
+              <img
+                className="mr-4"
+                src="https://food.grab.com/static/images/logo-appstore.svg"
+              />
+              <img src="https://food.grab.com/static/images/logo-playstore.svg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Footer */}
 
-      <div className="font-normal text-white bg-green-600 ">
+      <div className="font-normal text-white bg-green-600">
         <div className="container text-left ">
           <a className="" href="/">
             <img
