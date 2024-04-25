@@ -51,7 +51,7 @@ const Home = () => {
   const [logoSrc, setLogoSrc] = useState(logo1);
 
   const changeColor = () => {
-    if (window.scrollY >= 45) {
+    if (window.scrollY >= 45 || window.innerWidth < 1024) {
       setColor(true);
       setLogoSrc(logo2);
     } else {
@@ -73,9 +73,8 @@ const Home = () => {
 
       <div className={color ? "header header-bg header-shadow" : "header"}>
         <div className="flex items-center justify-between mx-36">
-          <a className="" href="/">
-            <img className="w-40 h-20 mt-2" src={logoSrc} alt="Logo" />
-          </a>
+          <img className="w-40 h-20 mt-2" src={logoSrc} alt="Logo" />
+
           <div className="flex space-x-4">
             <button
               className="hidden h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-400 lg:block"
@@ -87,7 +86,7 @@ const Home = () => {
               />
             </button>
             <button
-              className="h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-500 font-sm"
+              className="h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-500 font-sm "
               type="button"
             >
               Login / Sign Up
@@ -105,14 +104,14 @@ const Home = () => {
       {/* Background */}
 
       <img
-        className="relative hidden object-cover w-full bg-center bg-no-repeat bg-cover h-96 -z-1 md:block"
+        className="relative hidden object-cover w-full bg-center bg-no-repeat bg-cover h-96 -z-1 lg:block"
         src="https://food.grab.com/static/page-home/VN-new-1.jpg"
       />
       {/* Searchbox */}
       {/* chưa chỉnh được md width  100%, top 0 */}
       <div className="container">
-        <div class="searchContainer">
-          <h5 className="font-bold text-left">Good Afternoon</h5>
+        <div class="searchContainer xl:absolute lg:relative ">
+          <h5 className="font-bold text-left lg:w-full">Good Afternoon</h5>
           <h1 className="font-bold text-left ">
             Where should we deliver your food today?
           </h1>
@@ -194,12 +193,13 @@ const Home = () => {
         <h1 className="my-5 ml-8 font-bold text-left">
           Frequently Asked Questions
         </h1>
+        {/* chưa sửa được readmore */}
         <div className="ml-4">{faq}</div>
       </div>
       {/* Download */}
-      <div className="my-0 bg-slate-50">
-        <div className="grid grid-cols-2 gap-4 ">
-          <div className="flex flex-col items-center justify-center m-20 ml-44">
+      <div class="my-0 bg-slate-50">
+        <div class="grid grid-cols-1 lg:grid-cols-2 mx-2">
+          <div class="flex flex-col items-center justify-center m-28 ">
             <img src="https://food.grab.com/static/page-home/bottom-food-options.svg" />
             <h5>Curated restaurants</h5>
             <p>
@@ -207,9 +207,9 @@ const Home = () => {
               ahead and order all you want.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center m-20 mr-44">
+          <div class="flex flex-col items-center justify-center m-20">
             <img
-              className="w-40"
+              class="w-40"
               src="https://food.grab.com/static/images/ilus-cool-features-app.svg"
             />
             <h5>More cool features available on the app</h5>
@@ -217,9 +217,9 @@ const Home = () => {
               Download Grab app to use other payment methods and enjoy seamless
               communication with your driver.
             </p>
-            <div class="col-span-2 flex items-center ml-8 py-2">
+            <div class="col-span-2 flex items-center justify-center ml-8 py-2">
               <img
-                className="mr-4"
+                class="mr-4"
                 src="https://food.grab.com/static/images/logo-appstore.svg"
               />
               <img src="https://food.grab.com/static/images/logo-playstore.svg" />
