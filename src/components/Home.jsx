@@ -67,6 +67,12 @@ const Home = () => {
     };
   }, []);
 
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <div className="">
       {/* Header */}
@@ -147,8 +153,8 @@ const Home = () => {
           {restaurant}
         </Carousel>
         {/* Button */}
-        <div className="gap-2 d-grid" style={{ margin: "0 40px" }}>
-          <a href="/restaurant" className="btn btn-primary" id="see-all">
+        <div className="gap-2 mx-10 d-grid">
+          <a href="/restaurant" className="btn btn-primary" id="button">
             See all promotions
           </a>
         </div>
@@ -193,12 +199,19 @@ const Home = () => {
         <h1 className="my-5 ml-8 font-bold text-left">
           Frequently Asked Questions
         </h1>
-        {/* chưa sửa được readmore */}
-        <div className="ml-4">{faq}</div>
+        <div className={showMore ? "" : "hidden"}>{faq}</div>
+
+        {!showMore && (
+          <div className="gap-2 mx-10 mb-4 d-grid">
+            <a href="/" className="btn btn-primary" id="button">
+              Read More
+            </a>
+          </div>
+        )}
       </div>
       {/* Download */}
-      <div class="my-0 bg-slate-50">
-        <div class="grid grid-cols-1 lg:grid-cols-2 mx-2">
+      <div class="my-0 bg-slate-50 flex justify-center items-center ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 mx-4">
           <div class="flex flex-col items-center justify-center m-28 ">
             <img src="https://food.grab.com/static/page-home/bottom-food-options.svg" />
             <h5>Curated restaurants</h5>

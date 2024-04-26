@@ -198,10 +198,10 @@ export const responsive = {
         content1:" - Enter your address on the home page. Look at the GrabFood Listed Restaurants and Food spots near you. Pick your favorite restaurant and browse through the menu and select the dish you want to order."
         ,num2:"2.",
         tit2:"Checkout & Payment",
-        content2:"- Once sure that you are ordering enough, click on the ORDER NOW tab and enter your final food delivery address. Choose the payment method that best suits you, and checkout."
+        content2:" - Once sure that you are ordering enough, click on the ORDER NOW tab and enter your final food delivery address. Choose the payment method that best suits you, and checkout."
         ,num3:"3.",
         tit3:"Delivery",
-        content3:"- GrabFood has designed a seamless customer journey for you, so you can enjoy your food hassle-free. We will send you an instant email and SMS confirming your order and expected delivery time. Your food is then on its way."
+        content3:" - GrabFood has designed a seamless customer journey for you, so you can enjoy your food hassle-free. We will send you an instant email and SMS confirming your order and expected delivery time. Your food is then on its way."
     
       },
     {

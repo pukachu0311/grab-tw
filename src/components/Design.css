@@ -63,11 +63,11 @@ a{
     margin-top: 10px;
   }
 
-#see-all {
+#button {
   @apply px-4 py-2 text-sm font-bold bg-white border border-gray-700 text-slate-500;
   
 }
 
-#see-all:hover {
+#sbutton:hover {
   @apply text-green-600 border-green-600;
 }
