@@ -83,23 +83,24 @@ const Home = () => {
 
           <div className="flex space-x-4">
             <button
-              className="hidden h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-400 lg:block"
+              className="hidden h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-400 lg:block "
               type="button"
             >
               <img
+                className="w-4"
                 src="https://food.grab.com/static/images/icons/icon-cart-default-black.svg"
                 alt="Cart"
               />
             </button>
             <button
-              className="h-10 px-3 font-semibold bg-white border rounded border-slate-200 text-slate-500 font-sm "
+              className="h-10 px-3 text-xs font-semibold bg-white border rounded border-slate-200 text-slate-500 "
               type="button"
             >
-              Login / Sign Up
+              Login/Sign Up
             </button>
 
             <button
-              className="h-10 px-3 font-semibold bg-white border rounded font-sm border-slate-200 text-slate-500"
+              className="h-10 px-3 text-xs font-semibold bg-white border rounded border-slate-200 text-slate-500"
               type="button"
             >
               EN
@@ -114,7 +115,6 @@ const Home = () => {
         src="https://food.grab.com/static/page-home/VN-new-1.jpg"
       />
       {/* Searchbox */}
-      {/* chưa chỉnh được md width  100%, top 0 */}
       <div className="container">
         <div class="searchContainer xl:absolute lg:relative ">
           <h5 className="font-bold text-left lg:w-full">Good Afternoon</h5>
@@ -200,10 +200,9 @@ const Home = () => {
           Frequently Asked Questions
         </h1>
         <div className={showMore ? "" : "hidden"}>{faq}</div>
-
         {!showMore && (
           <div className="gap-2 mx-10 mb-4 d-grid">
-            <a href="/" className="btn btn-primary" id="button">
+            <a href="" className="btn btn-primary" id="button">
               Read More
             </a>
           </div>
