@@ -109,7 +109,7 @@ export default function ListRestaurant() {
           Food Promos in
           <a className="text-green-600 no-underline "> location</a>
         </h1>
-        <div className="grid grid-flow-col sm:flex sm:items-center">
+        <div className="flex flex-wrap sm:flex sm:items-center">
           {restaurant}
         </div>
       </div>

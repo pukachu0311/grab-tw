@@ -1,7 +1,7 @@
 import React from "react";
 function Restaurant(props) {
   return (
-    <div className="m-8 text-left border-0 rounded-md card w-72 h-80">
+    <div className=" text-left border-0 rounded-md card w-[23%] m-[1%] h-80">
       <img className="rounded-md" src={props.imageUrl} />
       <div className="absolute flex items-center w-12 h-5 text-xs font-medium text-white bg-green-600 -left-1 top-3">
         {props.promo}
