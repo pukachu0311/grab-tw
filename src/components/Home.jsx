@@ -14,6 +14,7 @@ import Restaurant from "./Restaurant";
 import { faqData, responsive, restaurantData, typeData } from "./data";
 import Type from "./Type";
 import Infomation from "./Infomation";
+import { Link } from "react-router-dom";
 
 const restaurant = restaurantData.map((item) => (
   <Restaurant
@@ -157,9 +158,9 @@ const Home = () => {
         </Carousel>
         {/* Button */}
         <div className="gap-2 mx-10 d-grid">
-          <a href="/restaurant" className="btn btn-primary" id="button">
+          <Link to="/restaurant" className="btn btn-primary" id="button">
             See all promotions
-          </a>
+          </Link>
         </div>
         {/* Type */}
         <h1 className="my-5 ml-8 font-bold text-left">
