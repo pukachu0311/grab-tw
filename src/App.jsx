@@ -1,13 +1,17 @@
 import "./App.css";
 import Home from "./components/Home";
 import { useState } from "react";
-import Test from "./components/Test";
 import ListRestaurant from "./components/ListRestaurant";
+import { Route, Routes } from "react-router-dom";
+import Detail from "./components/Detail";
 function App() {
   return (
     <>
+      <Routes>
+        <Route path="/grab-tw" element={<Detail />} />
+      </Routes>
       {/* <Home /> */}
-      <ListRestaurant />
+      {/* <ListRestaurant /> */}
       {/* <Test /> */}
     </>
   );

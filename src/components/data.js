@@ -233,4 +233,32 @@ export const responsive = {
       answer1:"Yes! But you can pay the difference if your order is less than the minimum order amount."
     },
   ];
+  export const dealData = [
+  {
+    imageUrl:
+      "https://food.grab.com/static/images/placeholder-restaurant-2by1.jpg",
+    title: "Gần tôi",
+  },
+  {
+    imageUrl:
+      "https://food.grab.com/static/images/placeholder-restaurant-2by1.jpg",
+    title: "Gian hàng đồng giá",
+  },
+  {
+    imageUrl:
+      "https://food.grab.com/static/images/placeholder-restaurant-2by1.jpg",
+    title: "Đổi vị món tối",
+  },
+  {
+    imageUrl:
+      "https://food.grab.com/static/images/placeholder-restaurant-2by1.jpg",
+    title: "Quán trứ danh",
+  },
+  {
+    imageUrl:
+      "https://food.grab.com/static/images/placeholder-restaurant-2by1.jpg",
+    title: "Quán mới giá hời",
+  },
+ 
+];
   

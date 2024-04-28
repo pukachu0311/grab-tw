@@ -149,7 +149,10 @@ const Home = () => {
           <a className="text-green-600 no-underline "> location</a>
         </h1>
         {/* Carousel */}
-        <Carousel className="sm:flex sm:items-center " responsive={responsive}>
+        <Carousel
+          className="mx-4 sm:flex sm:items-center"
+          responsive={responsive}
+        >
           {restaurant}
         </Carousel>
         {/* Button */}

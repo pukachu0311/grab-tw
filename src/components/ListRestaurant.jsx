@@ -3,12 +3,16 @@ import logo2 from "../assets/logo-grabfood2.svg";
 import iconLocation from "../assets/location.png";
 import iconNext from "../assets/icon-next.svg";
 import search from "../assets/search.png";
-import Restaurant from "./Restaurant";
+import RestaurantAll from "./RestaurantAll";
+import tw from "../assets/twitter.png";
+import fb from "../assets/facebook.png";
+import ig from "../assets/instagram.png";
 import { restaurantData } from "./data";
+import DealCards from "./DealCard";
 
 export default function ListRestaurant() {
   const restaurant = restaurantData.map((item) => (
-    <Restaurant
+    <RestaurantAll
       name={item.name}
       imageUrl={item.imageUrl}
       promo={item.promo}
@@ -67,7 +71,23 @@ export default function ListRestaurant() {
           </div>
         </div>
       </div>
-      <div className="container mt-40">
+      {/* Search */}
+      <button className="flex items-center w-4/5 mt-24 mx-36 focus:outline-none bg-slate-50 rounded-2xl">
+        <span className="ml-4 border-0 rounded-l-2xl">
+          <img src={search} alt="Search icon" className="h-6" />
+        </span>
+        <input
+          type="text"
+          className="flex-1 px-3 py-2 text-black border-0 rounded-2xl bg-slate-50 focus:outline-none"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          placeholder="Search for a dish or a restaurant"
+        />
+      </button>
+
+      <div className="grid grid-cols-1 gap-1 mx-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"></div>
+      <div className="container mt-20 ">
+        {/* Breadcumb */}
         <nav
           className="mx-10 "
           style={{
@@ -90,27 +110,70 @@ export default function ListRestaurant() {
           </ol>
         </nav>
 
-        <button
-          className="flex items-center w-full mx-10 mb-3 focus:outline-none bg-slate-50 rounded-2xl"
-          style={{ color: "#f7f7f7" }}
-        >
-          <span className="ml-4 border-0 rounded-l-2xl">
-            <img src={search} alt="Search icon" className="h-6" />
-          </span>
-          <input
-            type="text"
-            className="flex-1 px-3 py-2 text-black border-0 rounded-2xl bg-slate-50 focus:outline-none"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
-          />
-        </button>
-
         <h1 className="ml-8 font-bold text-left">
           Food Promos in
           <a className="text-green-600 no-underline "> location</a>
         </h1>
-        <div className="flex flex-wrap sm:flex sm:items-center">
-          {restaurant}
+        {/* List Restaurant */}
+        <div className="flex flex-wrap ml-6">{restaurant}</div>
+      </div>
+      {/* Footer */}
+
+      <div className="font-normal text-white bg-green-600">
+        <div className="container text-left ">
+          <a className="" href="/">
+            <img
+              className="pt-3 ml-8 w-44"
+              src="https://food.grab.com/static/images/logo-grabfood-white2.svg"
+              alt="Logo"
+            />
+          </a>
+          <hr className="mx-8 bg-white border-white " />
+          <div className="grid-cols-1 py-4">
+            <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-6 ml-8 ">
+              <div>About GrabFood</div>
+              <div>Be a GrabFood Merchant</div>
+              <div>Help</div>
+              <div>
+                <span class="inline-grid grid-cols-3 gap-1">
+                  <span>
+                    <img className="w-6 h-6 mr-5" src={fb} />
+                  </span>
+                  <span>
+                    <img className="w-6 h-6 mr-5" src={ig} />
+                  </span>
+                  <span>
+                    <img className="w-6 h-6 mr-5" src={tw} />
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="grid xl:grid-cols-4 gap-4 lg:grid-cols-6 ml-8 py-4">
+              <div>About Grab</div>
+              <div>Drive With Grab</div>
+              <div>FAQs</div>
+            </div>
+            <div class="grid grid-cols-4  gap-4 ml-8 ">
+              <div>Blog</div>
+            </div>
+          </div>
+          <hr className="mx-8 bg-white border-white" />
+          <div className="grid-cols-1 py-4">
+            <div class="grid xl:grid-cols-4 gap-4  lg:grid-cols-6">
+              <div class="col-span-2 flex items-center ml-8 py-2">
+                <img
+                  className="mr-4"
+                  src="https://food.grab.com/static/images/logo-appstore.svg"
+                />
+                <img src="https://food.grab.com/static/images/logo-playstore.svg" />
+              </div>
+              <div class="col-span-2 py-4 text-xs xl:text-right  lg:text-left mr-8 lg:ml-8 ">
+                <span class="mr-4">© 2024 Grab</span>
+                <span class="mr-4">Terms of Service</span>
+                <span>• Privacy Policy</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

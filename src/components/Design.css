@@ -68,6 +68,6 @@ a{
   
 }
 
-#sbutton:hover {
+#button:hover {
   @apply text-green-600 border-green-600;
 }
