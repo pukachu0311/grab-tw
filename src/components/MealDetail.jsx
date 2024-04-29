@@ -104,6 +104,9 @@ const MealDetail = () => {
           onClose={closeDrawer}
           className="bla "
         >
+          <div>
+            <button onClick={() => closeDrawer()}>Close</button>
+          </div>
           {/* nội dung drawer */}
           {selectedMeal && (
             <div className="w-full border-0 card sm:w-full">
