@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import plus from "../assets/plus-white.svg";
 
-import Drawer from "react-modern-drawer";
+import { Drawer } from "antd";
 import "react-modern-drawer/dist/index.css";
 const MealDetail = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
   const [visible, setVisible] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -51,7 +47,9 @@ const MealDetail = () => {
     setQuantity(1);
     setVisible(true);
   };
-
+  const closeDrawer = () => {
+    setVisible(false);
+  };
   const handleIncreaseQuantity = () => {
     setQuantity(quantity + 1);
   };
@@ -63,11 +61,11 @@ const MealDetail = () => {
   };
 
   return (
-    <div className="container">
-      <div className="grid gap-4 mb-4 text-left xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
+    <div className="container p-0 sm:-0 ">
+      <div className="grid gap-4 mb-4 text-left xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 md:w-fit">
         {mealsData.map((meal, index) => (
           <div key={index}>
-            <div className="card w-96 h-52">
+            <div className="card w-96 h-52" onClick={() => handleClick(meal)}>
               <div className="grid grid-cols-3 ">
                 <div className="col-span-1">
                   <img
@@ -85,19 +83,12 @@ const MealDetail = () => {
                     <div className="flex items-center justify-between">
                       <p className="font-semibold ">{meal.price}</p>
 
-                      <button onClick={toggleDrawer}>
+                      <button onClick={() => handleClick(meal)}>
                         <img
                           className="bg-green-500 rounded-full w-7"
                           src={plus}
                           alt="Add"
                         />
-                        <Drawer
-                          style={{}}
-                          open={isOpen}
-                          onClose={toggleDrawer}
-                          direction="right"
-                          className="bla"
-                        ></Drawer>
                       </button>
                     </div>
                   </div>
@@ -106,6 +97,69 @@ const MealDetail = () => {
             </div>
           </div>
         ))}
+        <Drawer
+          width={600}
+          visible={visible}
+          closable={false}
+          onClose={closeDrawer}
+          className="bla "
+        >
+          {/* nội dung drawer */}
+          {selectedMeal && (
+            <div className="w-full border-0 card sm:w-full">
+              <div className="flex">
+                <div className="w-1/4">
+                  <img
+                    src={selectedMeal.imageSrc}
+                    alt=""
+                    className="w-40 h-auto m-2 rounded"
+                  />
+                </div>
+
+                <div className="flex justify-between w-full ml-4 card-body">
+                  <div className="w-2/3">
+                    <h5 className="text-xl card-title">{selectedMeal.title}</h5>
+                    <p className="text-gray-400 h-fit card-text">
+                      {selectedMeal.description}
+                    </p>
+                  </div>
+                  <div className="flex items-start justify-end w-1/3">
+                    <p className="text-xl font-semibold">
+                      {selectedMeal.price}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          <div className="btnQty">
+            <div className="container p-0 text-center">
+              <div class="grid grid-cols-3 gap-4 ">
+                <div className="flex justify-between ">
+                  <button className="" onClick={handleDecreaseQuantity}>
+                    -
+                  </button>
+                  <span style={{ fontSize: 20, margin: "0 10px" }}>
+                    {quantity}
+                  </span>{" "}
+                  <button className="" onClick={handleIncreaseQuantity}>
+                    +
+                  </button>
+                </div>
+                <div className="col-span-2">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    style={{ width: "100%" }}
+                  >
+                    {selectedMeal &&
+                      `Add to Basket - ${selectedMeal.price * quantity} ₫`}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Drawer>
       </div>
     </div>
   );

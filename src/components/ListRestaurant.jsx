@@ -9,6 +9,7 @@ import fb from "../assets/facebook.png";
 import ig from "../assets/instagram.png";
 import { restaurantData } from "./data";
 import DealCards from "./DealCard";
+import { Link } from "react-router-dom";
 
 export default function ListRestaurant() {
   const restaurant = restaurantData.map((item) => (
@@ -27,9 +28,11 @@ export default function ListRestaurant() {
     <div>
       {/* Header */}
       <div className="header header-bg header-shadow">
-        <div className="flex items-center justify-between my-3 mx-36">
+        <div className="flex items-center justify-between px-3 container-sm">
           <div className="flex space-x-4 ">
-            <img className="w-40 h-12 my-2" src={logo2} alt="Logo" />
+            <Link to="/grab-tw">
+              <img className="w-40 h-12 my-2" src={logo2} alt="Logo" />
+            </Link>
             <div className="w-auto h-12 my-2 location-input">
               <img src={iconLocation} alt="Location Icon" className="h-6 m-1" />
               <input
@@ -72,7 +75,7 @@ export default function ListRestaurant() {
         </div>
       </div>
       {/* Search */}
-      <button className="flex items-center w-4/5 mt-24 mx-36 focus:outline-none bg-slate-50 rounded-2xl">
+      <button className="flex items-center w-4/5 mt-24 md:mx-36 sm:mx-0 focus:outline-none bg-slate-50 rounded-2xl container-sm">
         <span className="ml-4 border-0 rounded-l-2xl">
           <img src={search} alt="Search icon" className="h-6" />
         </span>

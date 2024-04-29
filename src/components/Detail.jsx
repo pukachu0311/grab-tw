@@ -12,15 +12,18 @@ import "react-tabs/style/react-tabs.css";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import MealDetail from "./MealDetail";
+import { Link } from "react-router-dom";
 
 export default function Detail() {
   return (
     <div>
       {/* Header */}
       <div className="header header-bg header-shadow">
-        <div className="flex items-center justify-between my-3 mx-36">
+        <div className="flex items-center justify-between px-3 container-sm">
           <div className="flex space-x-4 ">
-            <img className="w-40 h-12 my-2" src={logo2} alt="Logo" />
+            <Link to="/grab-tw">
+              <img className="w-40 h-12 my-2" src={logo2} alt="Logo" />
+            </Link>
             <div className="w-auto h-12 my-2 location-input">
               <img src={iconLocation} alt="Location Icon" className="h-6 m-1" />
               <input
@@ -63,7 +66,7 @@ export default function Detail() {
         </div>
       </div>
 
-      <div className="container mt-32">
+      <div className="container p-0 mt-32">
         <div className="ml-8 text-left">
           <h2 className="py-2 font-bold name">
             Trà Sữa MayCha- Trịnh Đình Trọng

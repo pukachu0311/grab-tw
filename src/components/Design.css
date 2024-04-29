@@ -13,7 +13,7 @@ a{
     position:fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 30;
     overflow: hidden;
 }
 
@@ -30,7 +30,7 @@ a{
     flex: auto;
     background: transparent;
 } */
-.searchContainer {
+/* .searchContainer {
   @apply flex flex-col justify-center p-6 mx-10 bg-white border border-gray-300 rounded-lg top-28;
     width: 360px;
     height: 398px;
@@ -38,7 +38,7 @@ a{
     -webkit-box-direction: normal;
     -webkit-box-pack: center;
    z-index: 2;
- }
+ } */
 
 
  .location-input { 
@@ -70,4 +70,7 @@ a{
 
 #button:hover {
   @apply text-green-600 border-green-600;
+}
+.container{
+  @apply pl-0;
 }

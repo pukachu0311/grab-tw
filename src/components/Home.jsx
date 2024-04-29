@@ -79,8 +79,10 @@ const Home = () => {
       {/* Header */}
 
       <div className={color ? "header header-bg header-shadow" : "header"}>
-        <div className="flex items-center justify-between mx-36">
-          <img className="w-40 h-20 mt-2" src={logoSrc} alt="Logo" />
+        <div className="flex items-center justify-between px-3 container-sm">
+          <Link to="/grab-tw">
+            <img className="w-40 h-20 mt-2" src={logoSrc} alt="Logo" />
+          </Link>
 
           <div className="flex space-x-4">
             <button
@@ -112,39 +114,51 @@ const Home = () => {
       {/* Background */}
 
       <img
-        className="relative hidden object-cover w-full bg-center bg-no-repeat bg-cover h-96 -z-1 lg:block"
+        className="relative hidden object-cover w-full bg-center bg-no-repeat bg-cover h-96 z-[-1] lg:block"
         src="https://food.grab.com/static/page-home/VN-new-1.jpg"
       />
       {/* Searchbox */}
-      <div className="container">
-        <div class="searchContainer xl:absolute lg:relative ">
-          <h5 className="font-bold text-left lg:w-full">Good Afternoon</h5>
-          <h1 className="font-bold text-left ">
-            Where should we deliver your food today?
-          </h1>
-          <div className="location-input">
-            <img src={iconLocation} alt="Location Icon" className="h-6 m-1" />
-            <input
-              placeholder="Type your location"
-              type="text"
-              className="flex-1 w-full p-2 focus:outline-none"
-            />
-            <img
-              src="https://food.grab.com/static/images/icons/icon-geo-button.svg"
-              alt="Target Icon"
-              className="h-6"
-            />
-          </div>
+      <div className="container md:min-h-fit min-h-[350px] flex items-end md:-0">
+        <div className="col-md-1">
+          <div class="z-10 sm:p-3 sm:mb-5 sm:rounded sm:absolute sm:top-16p sm:w-[350px]  sm:h-96  sm:shadow-xl bg-white  ">
+            <div className="pt-6 pl-4 wrap-input">
+              <h5 className="font-bold text-left lg:w-full">Good Afternoon</h5>
+              <h1 className="font-bold text-left ">
+                Where should we deliver your food today?
+              </h1>
+              <div className="location-input">
+                <img
+                  src={iconLocation}
+                  alt="Location Icon"
+                  className="h-6 m-1"
+                />
+                <input
+                  placeholder="Type your location"
+                  type="text"
+                  className="flex-1 w-full p-2 focus:outline-none"
+                />
+                <img
+                  src="https://food.grab.com/static/images/icons/icon-geo-button.svg"
+                  alt="Target Icon"
+                  className="h-6"
+                />
+              </div>
 
-          <button id="btnSearch" type="button" className=" btn btn-primary">
-            Search
-          </button>
+              <button
+                id="btnSearch"
+                type="button"
+                className="w-full btn btn-primary"
+              >
+                Search
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <hr className="my-16" />
       {/* Content */}
 
-      <div className="container">
+      <div className="container sm:p-0">
         <h1 className="ml-8 font-bold text-left">
           GrabFood Promo in
           <a className="text-green-600 no-underline "> location</a>
