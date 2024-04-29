@@ -14,34 +14,35 @@ const MealDetail = () => {
 
   const mealsData = [
     {
-      title: "Combo Rice With Chicken Thigh Includes Coca Coca 50% Off",
-      description: "Mỗi phần ăn bao gồm 01 bịch tương ớt, 01 bịch nước tương.",
+      title: "Mua 3 tặng 1",
+      description:
+        "Mua Trà Sữa Mochi Khoai Môn Sáp Trà Sữa Double Cheese Mochi Kem Cheese Trà Sữa Trân Châu tặng Trà Sữa Kem Trứng Khè M",
       price: 28000,
       imageSrc:
-        "https://food-cms.grab.com/compressed_webp/items/VNITE2024020610441903248/detail/menueditor_item_85427b70d75840c7bc76d341bd3635a8_1708608269260714876.webp",
+        "https://food-cms.grab.com/compressed_webp/items/VNITE20240416202050013266/detail/5baf45b3_210183_blob.webp",
     },
     {
-      title: "Combo Rice With Chicken Thigh And Sauce",
+      title: "Mua 2 tặng 1",
       description:
-        "Combo Includes Chicken Thigh Rice With Optional Sauce And Cold Seaweed Soup",
+        "Mua Trà Sữa Muối L Trà Sữa Kem Trứng Khè L tặng Trà Sữa Trân Châu M",
       price: 45750,
       imageSrc:
-        "https://food-cms.grab.com/compressed_webp/items/VNITE2024020610441903248/detail/menueditor_item_85427b70d75840c7bc76d341bd3635a8_1708608269260714876.webp",
+        "https://food-cms.grab.com/compressed_webp/items/VNITE20240401110216034556/detail/c4ca9a3e_126821_blob.webp",
     },
     {
-      title: "Rice With Grilled Pork",
-      description: "Mỗi phần ăn bao gồm 01 bịch tương ớt, 01 bịch nước tương.",
-      price: 35000,
-      imageSrc:
-        "https://food-cms.grab.com/compressed_webp/items/VNITE2024020304250857510/detail/menueditor_item_07b32cc0e2f84eca92996ac4db79b06f_1706934294696427230.webp",
-    },
-    {
-      title: "Rice With Chicken Thigh Without Sauce",
+      title: "Mua 3 tặng 1",
       description:
-        "Combo Includes Chicken Thigh Rice With Optional Sauce And Cold Seaweed Soup",
+        "Mua Trà Sữa Mochi Khoai Môn Sáp Trà Sữa Double Cheese Mochi Kem Cheese Trà Sữa Trân Châu tặng Trà Sữa Kem Trứng Khè M",
+      price: 28000,
+      imageSrc:
+        "https://food-cms.grab.com/compressed_webp/items/VNITE20240102181326010856/detail/7a0e4bce_391301_blob.webp",
+    },
+    {
+      title: "Combo Tiên Cá Vẫy Gọi Mới",
+      description: "Trà Sữa Trân Châu L và Ly Tiên Cá Màu Mới",
       price: 45750,
       imageSrc:
-        "https://food-cms.grab.com/compressed_webp/items/VNITE2024020303512252464/detail/menueditor_item_4c0e6f1a3f9d4a498ef98ba6203eaf2a_1706953593181323001.webp",
+        "https://food-cms.grab.com/compressed_webp/items/VNITE20240102181326010856/detail/7a0e4bce_391301_blob.webp",
     },
   ];
 
@@ -49,10 +50,6 @@ const MealDetail = () => {
     setSelectedMeal(meal);
     setQuantity(1);
     setVisible(true);
-  };
-
-  const closeDrawer = () => {
-    setVisible(false);
   };
 
   const handleIncreaseQuantity = () => {
@@ -67,53 +64,43 @@ const MealDetail = () => {
 
   return (
     <div className="container">
-      <div className="row row-cols-1 row-cols-md-3 g-0">
+      <div className="grid gap-4 mb-4 text-left xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
         {mealsData.map((meal, index) => (
-          <div key={index} className="col">
-            <div className="card" style={{ width: "385px", height: "210px" }}>
-              <div className="row g-0">
-                <div className="col-md-4">
+          <div key={index}>
+            <div className="card w-96 h-52">
+              <div className="grid grid-cols-3 ">
+                <div className="col-span-1">
                   <img
                     src={meal.imageSrc}
-                    className="card-img"
+                    className="w-full h-auto m-2 rounded"
                     alt="Meal"
-                    style={{
-                      margin: "15px",
-                      maxWidth: "100%",
-                      maxHeight: "100%",
-                    }}
                   />
                 </div>
-                <div className="col-md-8">
-                  <div
-                    className="card-body"
-                    style={{ textAlign: "left", marginLeft: "5px" }}
-                  >
-                    <h5
-                      className="card-title"
-                      style={{ fontWeight: "300", fontSize: "16px" }}
-                    >
-                      {meal.title}
-                    </h5>
-                    <p
-                      className="card-text"
-                      style={{ color: "#9a9a9a", fontSize: "15px" }}
-                    >
+                <div className="col-span-2">
+                  <div className="card-body">
+                    <h5 className="text-lg card-title">{meal.title}</h5>
+                    <p className="w-56 text-gray-400 h-fit card-text">
                       {meal.description}
                     </p>
-                    <p className="fw-500">{meal.price}</p>
-                  </div>
+                    <div className="flex items-center justify-between">
+                      <p className="font-semibold ">{meal.price}</p>
 
-                  <button onClick={toggleDrawer}>
-                    <Drawer
-                      style={{}}
-                      open={isOpen}
-                      onClose={toggleDrawer}
-                      direction="right"
-                      className="bla"
-                    ></Drawer>
-                    <img src={plus} alt="Add" />
-                  </button>
+                      <button onClick={toggleDrawer}>
+                        <img
+                          className="bg-green-500 rounded-full w-7"
+                          src={plus}
+                          alt="Add"
+                        />
+                        <Drawer
+                          style={{}}
+                          open={isOpen}
+                          onClose={toggleDrawer}
+                          direction="right"
+                          className="bla"
+                        ></Drawer>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
