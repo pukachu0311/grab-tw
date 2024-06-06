@@ -2,8 +2,6 @@ import React from "react";
 import logo2 from "../assets/logo-grabfood2.svg";
 import iconLocation from "../assets/location.png";
 import iconNext from "../assets/icon-next.svg";
-import search from "../assets/search.png";
-import RestaurantAll from "./RestaurantAll";
 import tw from "../assets/twitter.png";
 import fb from "../assets/facebook.png";
 import ig from "../assets/instagram.png";
@@ -16,7 +14,7 @@ import { Link } from "react-router-dom";
 
 export default function Detail() {
   return (
-    <div>
+    <>
       {/* Header */}
       <div className="header header-bg header-shadow">
         <div className="flex items-center justify-between px-3 container-sm">
@@ -67,6 +65,37 @@ export default function Detail() {
       </div>
 
       <div className="container p-0 mt-32">
+        {/* Breadcumb */}
+        <nav
+          className="mx-10 "
+          style={{
+            "--bs-breadcrumb-divider": `url(${iconNext})`,
+          }}
+          aria-label="breadcrumb"
+        >
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
+              <Link
+                className="no-underline text-sky-500 hover:text-green-600"
+                to="/grab-tw"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link
+                className="no-underline text-sky-500 hover:text-green-600"
+                to="/restaurant"
+              >
+                Restaurant
+              </Link>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              Cuisine
+            </li>
+          </ol>
+        </nav>
+        {/* Information of Restaurant*/}
         <div className="ml-8 text-left">
           <h2 className="py-2 font-bold name">
             Trà Sữa MayCha- Trịnh Đình Trọng
@@ -105,6 +134,7 @@ export default function Detail() {
             Ưu đãi đến 34k
           </span>
         </div>
+
         <Tabs style={{ position: "sticky" }}>
           <TabList>
             <Tab>Today's Offer</Tab>
@@ -183,6 +213,6 @@ export default function Detail() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

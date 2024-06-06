@@ -1,6 +1,5 @@
 export const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 2000, min: 1250 },
       items: 4,
     },
